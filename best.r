@@ -1,16 +1,4 @@
-## R script for assigment 3
-
-## part 1, plot 30-day mortality rate for heart attach
-
-outcome <- read.csv("outcome-of-care-measures.csv",colClasses = "character")
-head(outcome)
-ncol(outcome)
-nrow(outcome)
-outcome[,11] <- as.numeric(outcome[,11])
-hist(outcome[,11])
-
-
-## part 2, finding the best hopital in a state
+## this script is for assignment 3, which find the best hospital in each state by disease.
 
 best <- function(state,outcome){
         ## Read outcome data
@@ -19,8 +7,6 @@ best <- function(state,outcome){
         df[,17] <- as.numeric(df[,17])
         df[,23] <- as.numeric(df[,23])
         results <- c()
-        
-        ## for heart attack
         
         ## Check that state and outcome are valid
         if (outcome == "heart failure"){
